@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx webdriver-manager update && protractor launch.js"
+    "test": "npx webdriver-manager update && npx protractor launch.js"
   },
   "author": "",
   "license": "ISC",

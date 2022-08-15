@@ -1,4 +1,4 @@
-# HTEC Interview Assignment
+# Symphony assignment
 
 ### Setup
 

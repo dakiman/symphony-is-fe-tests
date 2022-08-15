@@ -23,8 +23,10 @@ describe('Symphony test suite', async () => {
         await BrowserUtils.waitUntilUrlContains('about-us');
 
         let metaDetailsCategories = await aboutUsPage.getMetaDetailsCategoriesContent();
+        let isUrlAboutUs = await BrowserUtils.doesUrlContain("https://symphony.is/about-us");
 
         expect(metaDetailsCategories).toEqual(expectedMetaDetailsCategories);
+        expect(isUrlAboutUs).toBe(true);
     })
 
     it('Counts the number of open positions', async () => {
@@ -32,7 +34,7 @@ describe('Symphony test suite', async () => {
         await BrowserUtils.waitUntilUrlContains('current-openings');
 
         let jobCount = await careersPage.getJobOpeningsCount();
-        //TODO review
+        //count had to be hardcoded, can either be prepopulated in DB or counted from db
         expect(jobCount).toEqual(78);
     })
 

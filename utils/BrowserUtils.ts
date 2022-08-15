@@ -13,11 +13,4 @@ export default class BrowserUtils {
     public static async doesUrlContain(urlPart: string): Promise<boolean> {
         return (await browser.getCurrentUrl()).includes(urlPart);
     }
-
-    public static async waitUntilUrlIsChanged() {
-        let currentUrl = await browser.getCurrentUrl();
-        browser.wait(() => !this.doesUrlContain(currentUrl), this.urlTimeout,
-            `URL is not changed after ${this.urlTimeout / 1000} seconds`
-        );
-    }
 }

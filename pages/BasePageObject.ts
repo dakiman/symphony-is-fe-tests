@@ -15,7 +15,7 @@ export default abstract class BasePageObject {
         );
     }
 
-    protected async hoverOverElement(selector: ElementFinder) {
+    protected async hoverOverElement(selector: ElementFinder): Promise<void> {
         await browser.actions().mouseMove(selector).perform();
     }
 
